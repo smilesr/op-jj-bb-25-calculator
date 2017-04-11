@@ -1,0 +1,73 @@
+html {
+        font-size: 62.5%; 
+ }
+.container {
+  min-height: 60vh;
+  width: 100vw;
+  border: 0.1rem solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+/*   box-shadow: 0 0 0 1px red; */
+}
+.face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background: red;
+  height: 90%;
+  width: 90%;
+  border-radius: 3rem;
+  background: linear-gradient(red,yellow);
+
+}
+
+.screen {
+  border: 0.1rem solid black;
+  min-height: 14rem;
+  width: 90rem;
+  flex-grow: 8;
+  margin: 3rem 4rem 3rem 4rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+  background: green;
+  background: linear-gradient(green,yellow);
+  border-radius: 2rem;
+}
+
+#digits {
+  float: right;
+  color: white;
+  line-height: 12rem;
+  text-align: center;
+  font-size: 10rem;
+  margin-right: 2rem;
+}
+.button {
+  margin: 3rem;
+  padding: 2rem;
+  height: 10rem;
+  width: 10rem;
+  border: 0.1rem black solid;
+  line-height: 10rem;
+  text-align: center;
+  font-size: 7.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem black;
+  background: blue;
+  background: linear-gradient(blue,yellow);
+  border-radius: 1rem;
+}
+
+.button:hover {
+  background: yellow;
+  background: linear-gradient(yellow,blue);
+}
+
+.button:active {
+  background-color:#b3b3b3;
+  box-shadow: 0 0.5rem #666;
+  transform: translateY(0.4rem);
+}

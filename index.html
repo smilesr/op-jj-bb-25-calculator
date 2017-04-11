@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta name="description" content="calculator">
+       <meta name="author" content="Bob Smiles">
+     <link rel="stylesheet" href="style.css">
+
+    // <script "js/javaFunctions.js"></script>
+
+        <title>Calculator</title>
+  </head>
+  <body>
+<div class = "container">
+  <div class = "face">
+<!--     <div class = "row"> -->
+    <div class = "screen">
+      <span id="digits"></span></div>
+      <div class = "button plus" data-key="11">+</div>
+      <div class = "button minus" data-key="12">-</div>
+      <div class = "button times" data-key="13">x</div>
+      <div class = "button divide" data-key="14">/</div>
+<!--     </div> -->
+<!--     <div class = "row"> -->
+       <div class = "button number one" data-key="1">1</div>
+      <div class = "button number two " data-key="2">2</div>
+      <div class = "button number three" data-key="3">3</div>
+      <div class = "button number zero" data-key="0">0</div>
+<!--     </div> -->
+<!--     <div class = "row"> -->
+      <div class= "button number four" data-key="4">4</div>
+      <div class="button number five" data-key="5">5</div>
+      <div class="button number six" data-key="6">6</div>
+      <div class="button clear-screen" data-key="15">C</div>
+<!--     </div> -->
+<!--     <div class = "row"> -->
+      <div class= "button number seven" data-key="7">7</div>
+      <div class= "button number eight" data-key="8">8</div>
+      <div class= "button number nine" data-key="9">9</div>
+      <div class= "button equal" data-key="16">=</div>
+<!--     </div> -->
+  </div>
+</div>
+    <script>
+    
+    var storeObject = {};
+var aNumber = document.querySelectorAll('.number');
+
+const keys = Array.from(document.querySelectorAll('.button'));
+keys.forEach(key => key.addEventListener('click', createCalculation));
+function createCalculation(e){
+    // var audio = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  // var xxx = document.querySelector("[data-key]").value;
+var numberValue = e.target.dataset.key;
+var screenDisplay = document.getElementById('digits');
+console.log(numberValue);
+console.log(screenDisplay);
+screenDisplay.innerHTML = numberValue;
+}
+
+var operat = {
+  '+': function(num1, num2){
+    return num1 + num2;
+  },
+ 
+  '*': function(num1, num2){
+    return num1 * num2;
+  },
+  '-': function(num1, num2){
+    return num1 - num2;
+  },
+  '/': function( num1, num2 ){
+    return num1 / num2;
+  }}
+
+
+function runIt(num1, num2, oper){
+
+  return operat[oper](num1,num2);
+}
+var answer = runIt(4,4,'/');
+console.log(answer);
+console.log(Object.keys(operat))
+
+function doIt(e){
+  console.log("done");
+}
+
+    </script>
+      
+  </body>
+</html>
