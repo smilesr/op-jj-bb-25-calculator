@@ -26,6 +26,16 @@
 //      alsoInvokeMe();
 
 // });
+
+  function storeIt(num){
+    var currentNumber = sessionStorage.getItem('firstNumber');
+    if (currentNumber === null){
+      sessionStorage.setItem('firstNumber',num);
+    } else {
+      sessionStorage.setItem('firstNumber', currentNumber.concat(num))
+    }
+    console.log(sessionStorage.getItem('firstNumber'));
+  }
   function identifyInputType(e){
     const inputValue = e.target.dataset.key;
 
@@ -35,7 +45,8 @@
     const regExClear = /C/;
     console.log(inputValue);
     if (regEx.test(inputValue)){
-      console.log('number');
+      displayKey(inputValue);
+      storeIt(inputValue);
     }
     if (regExSign.test(inputValue)){
       console.log('sign');
@@ -47,6 +58,8 @@
       console.log('clear')
     }
   }
+
+
   //   switch (inputValue) {
   //     case input'Oranges':
   //   console.log('Oranges are $0.59 a pound.');
@@ -74,10 +87,10 @@
   //     sessionStorage.setItem = ('firstNumber',inputValue);
   //   }
   // }
-  // function displayKey(inputValue){
-  //   const screenDisplay = document.getElementById('digits');
-  //   screenDisplay.innerHTML = inputValue;
-  // }
+  function displayKey(inputValue){
+    const screenDisplay = document.getElementById('digits');
+    screenDisplay.innerHTML = inputValue;
+  }
 
 
 
