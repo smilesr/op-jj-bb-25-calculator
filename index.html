@@ -9,7 +9,7 @@
     <meta name="author" content="Bob Smiles">
     <link rel="stylesheet" href="style.css">
 
-    // <script "js/javaFunctions.js"></script>
+  
     <title>Calculator</title>
   </head>
   <body>
@@ -19,10 +19,10 @@
         <div class = "screen">
           <span id="digits"></span>
         </div>
-        <div class = "button plus" data-key="11">+</div>
-        <div class = "button minus" data-key="12">-</div>
-        <div class = "button times" data-key="13">x</div>
-        <div class = "button divide" data-key="14">/</div>
+        <div class = "button plus" data-key="+">+</div>
+        <div class = "button minus" data-key="-">-</div>
+        <div class = "button times" data-key="*">x</div>
+        <div class = "button divide" data-key="/">/</div>
     <!--     </div> -->
     <!--     <div class = "row"> -->
         <div class = "button number one" data-key="1">1</div>
@@ -34,81 +34,16 @@
         <div class= "button number four" data-key="4">4</div>
         <div class="button number five" data-key="5">5</div>
         <div class="button number six" data-key="6">6</div>
-        <div class="button clear-screen" data-key="15">C</div>
+        <div class="button clear-screen" data-key="C">C</div>
     <!--     </div> -->
     <!--     <div class = "row"> -->
         <div class= "button number seven" data-key="7">7</div>
         <div class= "button number eight" data-key="8">8</div>
         <div class= "button number nine" data-key="9">9</div>
-        <div class= "button equal" data-key="16">=</div>
+        <div class= "button equal" data-key="=">=</div>
     <!--     </div> -->
       </div>
     </div>
-    <script>
-    
-      var storeObject = {};
-      var aNumber = document.querySelectorAll('.number');
-      const keys = Array.from(document.querySelectorAll('.button'));
-      keys.forEach(key => key.addEventListener('click', displayKey));
-
-//       element.addEventListener('event', function() {
-
-//      invokeMe();
-//      alsoInvokeMe();
-
-// });
-
-
-      function createCalculation(e){
-    // var audio = document.querySelector(`div[data-key="${e.keyCode}"]`);
-  // var xxx = document.querySelector("[data-key]").value;
-     
-        console.log(numberValue);
-        console.log(screenDisplay);
-        screenDisplay.innerHTML = numberValue;
-        if (sessionStorage.getItem('firstNumber') ){
-          var firstItem = sessionStorage.get('firstNumber');
-
-        } 
-        sessionStorage.setItem = ('firstNumber',numberValue);
-        }
-      }
-      function displayKey(e){
-        const numberValue = e.target.dataset.key;
-        const screenDisplay = document.getElementById('digits');
-        screenDisplay.innerHTML = numberValue;
-      }
-      function 
-
-      var operat = {
-        '+': function(num1, num2){
-          return num1 + num2;
-        },
-       
-        '*': function(num1, num2){
-          return num1 * num2;
-        },
-        '-': function(num1, num2){
-          return num1 - num2;
-        },
-        '/': function( num1, num2 ){
-          return num1 / num2;
-        }}
-
-
-      function runIt(num1, num2, oper){
-
-        return operat[oper](num1,num2);
-      }
-      var answer = runIt(4,4,'/');
-      console.log(answer);
-      console.log(Object.keys(operat))
-
-      function doIt(e){
-        console.log("done");
-      }
-
-    </script>
-      
+        <script src="script.js?v=0.5"></script>
   </body>
 </html>
