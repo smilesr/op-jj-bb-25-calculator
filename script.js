@@ -31,10 +31,12 @@
     var currentNumber = sessionStorage.getItem('firstNumber');
     if (currentNumber === null){
       sessionStorage.setItem('firstNumber',num);
+
     } else {
       sessionStorage.setItem('firstNumber', currentNumber.concat(num))
     }
-    console.log(sessionStorage.getItem('firstNumber'));
+    currentNumber = sessionStorage.getItem('firstNumber')
+    return currentNumber;
   }
   function identifyInputType(e){
     const inputValue = e.target.dataset.key;
@@ -45,8 +47,8 @@
     const regExClear = /C/;
     console.log(inputValue);
     if (regEx.test(inputValue)){
-      displayKey(inputValue);
-      storeIt(inputValue);
+      var newNumber = storeIt(inputValue);
+      displayKey(newNumber);
     }
     if (regExSign.test(inputValue)){
       console.log('sign');
@@ -55,7 +57,8 @@
       console.log('equals')
     }
     if (regExClear.test(inputValue)){
-      console.log('clear')
+      console.log('clear');
+      sessionStorage.clear();
     }
   }
 
