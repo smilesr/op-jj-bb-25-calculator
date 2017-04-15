@@ -29,10 +29,12 @@
 
   function storeIt(num){
     var currentNumber = sessionStorage.getItem('firstNumber');
-    if (currentNumber === null){
+    if (JSON.parse(currentNumber) === null){
+      console.log("===null")
       sessionStorage.setItem('firstNumber',num);
 
     } else {
+      console.log("else")
       sessionStorage.setItem('firstNumber', currentNumber.concat(num))
     }
     currentNumber = sessionStorage.getItem('firstNumber')
@@ -48,9 +50,11 @@
     console.log(inputValue);
     if (regEx.test(inputValue)){
       var newNumber = storeIt(inputValue);
+      console.log("newNUmber=" + newNumber);
       displayKey(newNumber);
     }
     if (regExSign.test(inputValue)){
+      addSecondNumber(inputValue);
       console.log('sign');
     }
     if (regExEqual.test(inputValue)){
@@ -95,6 +99,15 @@
     screenDisplay.innerHTML = inputValue;
   }
 
+  function addSecondNumber(sign){
+    var temp = sessionStorage.getItem('firstNumber');
+    sessionStorage.setItem('secondNumber', temp);
+    sessionStorage.setItem('firstNumber', null);
+    sessionStorage.setItem('sign', sign);
+    console.log(sessionStorage.getItem('secondNumber'));
+        console.log(sessionStorage.getItem('firstNumber'));
+            console.log(sessionStorage.getItem('sign'));
+  }
 
 
   // function runIt(num1, num2, oper){
