@@ -1,17 +1,24 @@
   var storeNumber = {};
-  const operat = {
-    '+': function(num1, num2){
-      return num1 + num2;
-    }, 
-    '*': function(num1, num2){
-      return num1 * num2;
-    },
-    '-': function(num1, num2){
-      return num1 - num2;
-    },
-    '/': function( num1, num2 ){
-      return num1 / num2;
-    }}
+  function calculateIt(num1, num2, operationSign){
+    const operat = {
+      '+': function(num1, num2){
+        return num1 + num2;
+      }, 
+      '*': function(num1, num2){
+        return num1 * num2;
+      },
+      '-': function(num1, num2){
+        return num1 - num2;
+      },
+      '/': function( num1, num2 ){
+        return num1 / num2;
+      }
+    }
+
+    var x = operat[operationSign];
+    var y = 1;
+    return x(num1,num2);
+  }
 
   var aNumber = document.querySelectorAll('.number');
   const keys = Array.from(document.querySelectorAll('.button'));
@@ -20,21 +27,17 @@
     identifyInputType(e);
   }));
 
-//       element.addEventListener('event', function() {
+  sessionStorage.setItem('firstNumber', null);
+  sessionStorage.setItem('secondNumber', null);
+  sessionStorage.setItem('sign', null);
 
-//      invokeMe();
-//      alsoInvokeMe();
-
-// });
 
   function storeIt(num){
     var currentNumber = sessionStorage.getItem('firstNumber');
     if (JSON.parse(currentNumber) === null){
-      console.log("===null")
       sessionStorage.setItem('firstNumber',num);
 
     } else {
-      console.log("else")
       sessionStorage.setItem('firstNumber', currentNumber.concat(num))
     }
     currentNumber = sessionStorage.getItem('firstNumber')
@@ -42,7 +45,7 @@
   }
   function identifyInputType(e){
     const inputValue = e.target.dataset.key;
-
+    console.log(inputValue);
     const regEx = /\d/;
     const regExSign = /[\+\-\*\/]/;
     const regExEqual = /\=/;
@@ -55,14 +58,21 @@
     }
     if (regExSign.test(inputValue)){
       addSecondNumber(inputValue);
-      console.log('sign');
     }
     if (regExEqual.test(inputValue)){
-      console.log('equals')
+      console.log('equals');
+      var firstValue = parseInt(sessionStorage.getItem('secondNumber'));
+      var secondValue = parseInt(sessionStorage.getItem('firstNumber'));
+      var operationSign = sessionStorage.getItem('sign');
+      var answer = calculateIt(firstValue,secondValue,operationSign);
+        var screenDisplay = document.getElementById('digits');
+    screenDisplay.innerHTML = inputValue;
+      displayKey(answer);
     }
     if (regExClear.test(inputValue)){
       console.log('clear');
       sessionStorage.clear();
+      displayKey('');
     }
   }
 
@@ -104,9 +114,6 @@
     sessionStorage.setItem('secondNumber', temp);
     sessionStorage.setItem('firstNumber', null);
     sessionStorage.setItem('sign', sign);
-    console.log(sessionStorage.getItem('secondNumber'));
-        console.log(sessionStorage.getItem('firstNumber'));
-            console.log(sessionStorage.getItem('sign'));
   }
 
 
