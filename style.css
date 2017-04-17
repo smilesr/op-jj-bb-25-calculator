@@ -3,77 +3,47 @@ html {
  }
 .face {
   min-height: 60vh;
-  width: 100vw;
+  width: 40rem;
   border: 0.1rem solid blue;
+  background-image: url("./11b9b36e92552a7da1e915a0461aebc7.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 /*   box-shadow: 0 0 0 1px red; */
 }
+
 .container-screen {
   display: flex;
-  /*justify-content: center;*/
-  /*align-items: center;*/
   flex-direction: row; 
   flex-wrap: wrap;
   margin-bottom: 5rem;
-  /*min-height: 10vh;*/
-  /*margin: 0 auto;*/
   background: white;
-/*  height: 90%;
-  width: 90%;*/
   border-top-right-radius: 3rem;
   border-top-left-radius: 3rem;
- /* background: linear-gradient(red,yellow);*/
 }
 .container {
   display: flex;
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row; 
   flex-wrap: wrap;
   height: 80vh;
-  /*margin: 0 auto;*/
-  background: white;
-/*  height: 90%;
-  width: 90%;*/
-  border-bottom-right-radius: 3rem;
-  border-bottom-left-radius: 3rem;
-  /*background: linear-gradient(red,yellow);*/
+ /* border: 5px solid blue;*/
 }
 
 .button {
-  /*display: flex;*/
-  padding: 1rem;
-  max-height: 5rem;
-  /*width: 10rem;*/
-  /*flex-basis: 250px;*/
-  flex: 0 0 20%;
-  border: 0.1rem black solid;
-  line-height: 5rem;
-  text-align: center;
-  font-size: 5rem;
-  box-shadow: 0.5rem 0.5rem 1rem black;
-  background: blue;
-  background: linear-gradient(blue,yellow);
-  border-radius: 1rem;
+  max-height: 9rem;
+  max-width: 9rem;
+  position: relative;
+  flex: 0 0 50%;
+  background-image: url("./smaller-earth.jpg");
+  border-radius: 5rem;
+/*  border: 5px solid red;*/
 }
-
-/*@media screen and (max-width: 519px) {
-    .button {
-    flex-basis: 100px; 
-  }
-
+.earth{
+  background-image: url("./earth-small.jpg");
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
-@media screen and (max-width: 699px) and (min-width: 520px) {
-  .button {
-    flex-basis: 175px; 
-  }
-}
-
-@media (min-width: 700px) {
-  .button {
-    flex-basis: 250px; 
-  }
-}*/
 .screen {
   border: 0.1rem solid black;
   min-height: 5rem;
@@ -94,7 +64,15 @@ html {
   font-size: 5rem;
   margin-right: 2rem;
 }
-
+.symbol{
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  left: 3.8rem;
+  top: 3.2rem;
+}
 
 .button:hover {
   background: yellow;
