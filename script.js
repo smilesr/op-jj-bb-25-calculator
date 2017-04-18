@@ -20,7 +20,7 @@
     return x(num1,num2);
   }
 
-  var aNumber = document.querySelectorAll('.number');
+  // var aNumber = document.querySelectorAll('.number');
   const keys = Array.from(document.querySelectorAll('.button'));
   keys.forEach(key => key.addEventListener('click', function(e) {
     // console.log("clicked");
@@ -44,7 +44,12 @@
     return currentNumber;
   }
   function identifyInputType(e){
-    const inputValue = e.target.dataset.key;
+    // if (e.toElement.firstChild.nodeType === 3){
+    //   const inputValue = e.toElement.parentElement.dataset.key
+    // } else {
+    // const inputValue = e.target.dataset.key;
+    // }
+    const inputValue = e.toElement.firstChild.nodeType === 3 ? e.toElement.parentElement.dataset.key : e.target.dataset.key;
     console.log(inputValue);
     const regEx = /\d/;
     const regExSign = /[\+\-\*\/]/;
