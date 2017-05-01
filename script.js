@@ -70,9 +70,10 @@
       var secondValue = parseInt(sessionStorage.getItem('firstNumber'));
       var operationSign = sessionStorage.getItem('sign');
       var answer = calculateIt(firstValue,secondValue,operationSign);
-        var screenDisplay = document.getElementById('digits');
-    screenDisplay.innerHTML = inputValue;
+      var screenDisplay = document.getElementById('digits');
+      screenDisplay.innerHTML = inputValue;
       displayKey(answer);
+      sessionStorage.clear();
     }
     if (regExClear.test(inputValue)){
       console.log('clear');

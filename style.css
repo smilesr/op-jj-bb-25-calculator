@@ -1,5 +1,5 @@
 @font-face {
-    font-family: constellationFont;
+    /*font-family: constellationFont;*/
     src: url(./quartz974.woff);
 }
 
@@ -9,30 +9,34 @@ html {
 .face {
   min-height: 60vh;
   width: 40rem;
-  border: 0.1rem solid blue;
+  border: 1rem solid black;
   border-radius: 2rem;
   background-image: url("./star.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  margin-left: 33%;
 /*   box-shadow: 0 0 0 1px red; */
 }
 
-.container-screen {
+/*.container-screen {
   display: flex;
   flex-direction: row; 
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 5rem;
   margin-bottom: 5rem;
   background: white;
   border-top-right-radius: 3rem;
   border-top-left-radius: 3rem;
-}
+  border: 1px solid red;
+}*/
 .container {
   display: flex;
   justify-content: center;
   flex-direction: row; 
   flex-wrap: wrap;
   height: 80vh;
+
  /* border: 5px solid blue;*/
 }
 
@@ -43,7 +47,7 @@ html {
   flex: 0 0 50%;
 /*  background-image: url("./smaller-earth.jpg");*/
   border-radius: 5rem;
-  border: 5px solid red;
+ /* border: 5px solid red;*/
 }
 .earth{
 /*  background-image: url("./earth-small.jpg");*/
@@ -52,20 +56,25 @@ html {
   top: 0px;
 }
 .screen {
-  border: 0.1rem solid black;
+  /*border: 0.1rem solid black;*/
   min-height: 5rem;
-  flex-basis: 1200px;
-  flex-grow: 1;
-  flex-shrink: 1;
+ /* flex-basis: 1200px;*/
+ /* flex-grow: 1;*/
+  /*flex-shrink: 1;*/
   box-shadow: 0.5rem 0.5rem 0.5rem black;
-  background: white;
+  /*background: white;*/
+  background:#3A3236;
+    /*background:rgb(133, 139, 171);*/
   /*background: linear-gradient(green,yellow);*/
   border-radius: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 2rem;
 }
 
 #digits {
   float: right;
-  color: black;
+  color: rgb(133, 139, 155);
   line-height: 5rem;
   text-align: center;
   font-size: 5rem;
@@ -75,12 +84,15 @@ html {
   z-index: 100;
   position: absolute;
   color: white;
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 4.5rem;
+  /*font-weight: bold;*/
   left: 3.8rem;
   top: 3.2rem;
-  font-family: constellationFont;
-  border: 1px solid yellow;
+  font-family: 'Cinzel', serif;
+/*  font-family: 'Monoton', cursive;
+  font-family: 'Ewert', cursive;*/
+  /*font-family: constellationFont;*/
+ /* border: 1px solid yellow;*/
 
 }
 
