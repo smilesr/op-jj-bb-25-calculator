@@ -15,6 +15,7 @@ html {
   margin-left: 33%;
 }
 .container {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: row; 
@@ -44,7 +45,7 @@ html {
 }
 #digits {
   float: right;
-  color: rgb(133, 139, 155);
+  color: white;
   line-height: 5rem;
   text-align: center;
   font-size: 5rem;
@@ -55,13 +56,14 @@ html {
   position: absolute;
   color: white;
   font-size: 4.5rem;
-  left: 3.8rem;
-  top: 3.2rem;
+  left: 3.5rem;
+  top: 2.1rem;
   font-family: 'Cinzel', serif;
 }
 
 .button:active {
-  background-color:#b3b3b3;
+  background-color:black;
   box-shadow: 0 0.5rem #666;
-  transform: translateY(0.4rem);
+  transform: translateY(0.2rem);
+  z-index: 1;
 }
